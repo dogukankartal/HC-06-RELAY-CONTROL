@@ -1,0 +1,22 @@
+#include <SoftwareSerial.h>
+SoftwareSerial bluetoothModulu(0,1);
+int role = 8;
+void setup() {
+Serial.begin(9600);
+pinMode(role, OUTPUT);
+}
+void loop() {
+char ch = Serial.read();
+if(ch > 0)
+{
+switch (ch)
+{
+case 'a':
+digitalWrite(role, HIGH);
+break;
+case 'k':
+digitalWrite(role, LOW);
+break;
+}
+}
+}
